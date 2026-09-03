@@ -1,0 +1,1811 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abhishek Kumar | Java Full Stack Developer</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+:root {
+    --primary: #0b8467;
+    --primary-dark: #08634e;
+    --accent: #19a982;
+
+    --dark-bg: #0b1220;
+    --section-bg: #101a2b;
+    --card-bg: #162235;
+    --card-hover: #1b2a40;
+
+    --navy: #20375a;
+    --text-light: #f1f5f9;
+    --text: #d8e0ea;
+    --text-muted: #94a3b8;
+
+    --border: rgba(255,255,255,0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--dark-bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    background: rgba(11,18,32,0.96) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.brand-dot {
+    color: var(--accent);
+}
+
+.nav-link {
+    color: #cbd5e1 !important;
+    font-size: 0.93rem;
+    font-weight: 600;
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent) !important;
+}
+
+.navbar-toggler {
+    border: 1px solid var(--border);
+    padding: 7px 10px;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 120px 0 80px;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(11,132,103,0.14),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #0b1220 0%,
+            #101a2b 100%
+        );
+    display: flex;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(11,132,103,0.14);
+    border: 1px solid rgba(25,169,130,0.25);
+    color: #63d8b5;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-badge span {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(25,169,130,0.7);
+}
+
+.hero h1 {
+    color: var(--text-light);
+    font-size: clamp(2.5rem, 6vw, 4.4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-subtitle {
+    color: #5dd2af;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.hero-text {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 680px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-main {
+    background: var(--primary);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid var(--primary);
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-light);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid var(--border);
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--accent);
+}
+
+.hero-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.30);
+}
+
+.profile-placeholder {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--navy)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 800;
+}
+
+.hero-card h4 {
+    color: var(--text-light);
+    font-weight: 800;
+}
+
+.hero-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.quick-info {
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    margin-top: 18px;
+}
+
+.quick-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.quick-item i {
+    color: var(--accent);
+}
+
+/* ================= COMMON ================= */
+
+section {
+    padding: 90px 0;
+}
+
+.section-light {
+    background: var(--section-bg);
+}
+
+.section-title {
+    color: var(--text-light);
+    font-size: 2.25rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+.title-line {
+    width: 55px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 10px;
+    margin: 15px auto 20px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 38px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+}
+
+.about-card h3 {
+    color: var(--text-light);
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.about-card p {
+    color: var(--text-muted);
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.about-list li {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+}
+
+.about-list i {
+    color: var(--accent);
+    margin-right: 8px;
+}
+
+.info-box {
+    background: #111c2d;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    height: 100%;
+}
+
+.info-box small {
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.info-box strong {
+    color: var(--text-light);
+}
+
+/* ================= SKILLS ================= */
+
+.skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(25,169,130,0.4);
+    background: var(--card-hover);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.skill-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(11,132,103,0.14);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+}
+
+.skill-card h4 {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.skill-name span:last-child {
+    color: var(--accent);
+}
+
+.progress {
+    height: 7px;
+    background: #243247;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.progress-bar {
+    background: var(--primary);
+    border-radius: 20px;
+}
+
+/* ================= PROJECTS ================= */
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    background: var(--card-hover);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.30);
+}
+
+.project-top {
+    height: 145px;
+    background: linear-gradient(
+        135deg,
+        #20375a,
+        #0b8467
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 3.5rem;
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    color: var(--text-light);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.project-content p {
+    color: var(--text-muted);
+    font-size: 0.91rem;
+    margin-bottom: 18px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 20px;
+}
+
+.tech-badge {
+    background: rgba(11,132,103,0.14);
+    border: 1px solid rgba(25,169,130,0.15);
+    color: #63d8b5;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.project-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-right: 15px;
+}
+
+.project-link:hover {
+    color: #70e2c2;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.experience-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: 15px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+}
+
+.experience-date {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 7px;
+}
+
+.experience-card h3 {
+    color: var(--text-light);
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.experience-company {
+    color: #aab6c7;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.experience-card ul {
+    color: var(--text-muted);
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.experience-card li {
+    margin-bottom: 7px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(25,169,130,0.4);
+    background: var(--card-hover);
+}
+
+.contact-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: rgba(11,132,103,0.14);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.contact-card h4 {
+    color: var(--text-light);
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.contact-card p,
+.contact-card a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    word-break: break-word;
+}
+
+.contact-card a:hover {
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-link:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #070d18;
+    color: #7f8da1;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.88rem;
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b1220;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            Abhishek<span class="brand-dot">.</span>
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#portfolioNavbar">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="portfolioNavbar">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-8">
+
+                <div class="hero-badge">
+                    <span></span>
+                    Available for Entry-Level Opportunities
+                </div>
+
+                <h1>
+                    Hi, I'm <span>Abhishek Kumar</span>
+                </h1>
+
+                <div class="hero-subtitle">
+                    Java Full Stack Developer | Fresher
+                </div>
+
+                <p class="hero-text">
+
+                    I am a passionate Java developer focused on building
+                    practical and user-friendly web applications using
+                    Java, Spring Boot, MySQL, HTML, CSS, JavaScript and Bootstrap.
+                    I enjoy solving programming problems and developing
+                    real-world applications while continuously improving
+                    my development skills.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn-main">
+                        <i class="bi bi-folder2-open me-2"></i>
+                        View My Projects
+                    </a>
+
+                    <a href="#contact" class="btn-secondary">
+                        <i class="bi bi-envelope me-2"></i>
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="hero-card text-center">
+
+                    <div class="profile-placeholder">
+                        <img src="LinkedIn_Profile_Photo.jpg" alt="" style="height: 150px; border-radius: 60%;">
+                    </div>
+
+                    <h4>Abhishek Kumar</h4>
+
+                    <p>
+                        Java Full Stack Developer
+                    </p>
+
+                    <div class="quick-info text-start">
+
+                        <div class="quick-item">
+                            <i class="bi bi-code-slash"></i>
+                            Java & Spring Boot
+                        </div>
+
+                        <div class="quick-item">
+                            <i class="bi bi-database"></i>
+                            MySQL & JDBC
+                        </div>
+
+                        <div class="quick-item">
+                            <i class="bi bi-window"></i>
+                            HTML, CSS, JavaScript & Bootstrap
+                        </div>
+
+                        <div class="quick-item">
+                            <i class="bi bi-mortarboard"></i>
+                            Fresher
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="title-line"></div>
+
+        <p class="section-subtitle">
+            A fresher developer focused on learning, building and growing
+            through practical software development.
+        </p>
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <div class="about-card">
+
+                    <div class="row g-4 align-items-center">
+
+                        <div class="col-md-5">
+
+                            <h3>
+                                Building My Career Through Real Projects
+                            </h3>
+
+                            <p>
+                                I am a fresher Java Full Stack Developer with
+                                hands-on experience in developing web-based
+                                applications using Java and Spring Boot.
+                            </p>
+
+                            <p>
+                                During my learning and summer training,
+                                I worked on projects such as a Leave Management
+                                System and Education Hub. These projects helped
+                                me understand backend development, database
+                                connectivity, CRUD operations, authentication,
+                                form handling and responsive frontend design.
+                            </p>
+
+                        </div>
+
+
+                        <div class="col-md-7">
+
+                            <div class="row g-3">
+
+                                <div class="col-sm-6">
+
+                                    <div class="info-box">
+
+                                        <small>Name</small>
+
+                                        <strong>
+                                            Abhishek Kumar
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-sm-6">
+
+                                    <div class="info-box">
+
+                                        <small>Role</small>
+
+                                        <strong>
+                                            Java Full Stack Developer
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-sm-6">
+
+                                    <div class="info-box">
+
+                                        <small>Experience</small>
+
+                                        <strong>
+                                            Fresher
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-sm-6">
+
+                                    <div class="info-box">
+
+                                        <small>Primary Language</small>
+
+                                        <strong>
+                                            Java
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-sm-6">
+
+                                    <div class="info-box">
+
+                                        <small>Backend</small>
+
+                                        <strong>
+                                            Spring Boot
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-sm-6">
+
+                                    <div class="info-box">
+
+                                        <small>Database</small>
+
+                                        <strong>
+                                            MySQL
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills" class="section-light">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Technical Skills
+        </h2>
+
+        <div class="title-line"></div>
+
+        <p class="section-subtitle">
+            Technologies and tools I have learned and used in my projects.
+        </p>
+
+
+        <div class="row g-4">
+
+
+            <!-- JAVA -->
+
+            <div class="col-lg-6">
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-cup-hot"></i>
+                    </div>
+
+                    <h4>
+                        Backend Development
+                    </h4>
+
+
+                    <div class="skill-name">
+                        <span>Java</span>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:85%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>Spring Boot</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:80%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>Spring MVC</span>
+                        <span>78%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:78%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>JdbcTemplate / JDBC</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:80%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATABASE -->
+
+            <div class="col-lg-6">
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-database"></i>
+                    </div>
+
+                    <h4>
+                        Database & Tools
+                    </h4>
+
+
+                    <div class="skill-name">
+                        <span>MySQL</span>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:85%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>SQL</span>
+                        <span>82%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:82%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>phpMyAdmin</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:80%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>Git & GitHub</span>
+                        <span>70%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:70%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FRONTEND -->
+
+            <div class="col-lg-6">
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+
+                    <h4>
+                        Frontend Development
+                    </h4>
+
+
+                    <div class="skill-name">
+                        <span>HTML5</span>
+                        <span>90%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:90%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>CSS3</span>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:85%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>JavaScript</span>
+                        <span>70%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:70%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>Bootstrap</span>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:85%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WEB -->
+
+            <div class="col-lg-6">
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-globe2"></i>
+                    </div>
+
+                    <h4>
+                        Web Development
+                    </h4>
+
+
+                    <div class="skill-name">
+                        <span>REST APIs</span>
+                        <span>75%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:75%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>Thymeleaf</span>
+                        <span>78%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:78%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>Spring MVC</span>
+                        <span>78%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:78%"></div>
+                    </div>
+
+
+                    <div class="skill-name">
+                        <span>CRUD Operations</span>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:85%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Featured Projects
+        </h2>
+
+        <div class="title-line"></div>
+
+        <p class="section-subtitle">
+            Practical applications developed while learning full-stack
+            web development.
+        </p>
+
+
+        <div class="row g-4">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-top">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>
+                            Leave Management System
+                        </h3>
+
+                        <p>
+                            A web-based employee leave management system
+                            that allows employees to apply for leave,
+                            track leave status and balance while administrators
+                            manage employees, leave approvals, holidays and
+                            leave allocation.
+                        </p>
+
+                        <div class="tech-stack">
+
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">Spring Boot</span>
+                            <span class="tech-badge">Spring MVC</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Thymeleaf</span>
+                            <span class="tech-badge">Bootstrap</span>
+
+                        </div>
+
+                        <a href="#" class="project-link">
+                            <i class="bi bi-github me-1"></i>
+                            Source Code
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-top">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>
+                            Education Hub
+                        </h3>
+
+                        <p>
+                            An online education platform designed for
+                            students from 10th to diploma level. The system
+                            includes student management, course-related
+                            content, assignments, enquiries, feedback and
+                            administrator functionality.
+                        </p>
+
+                        <div class="tech-stack">
+
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">Spring Boot</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Thymeleaf</span>
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">Bootstrap</span>
+
+                        </div>
+
+                        <a href="#" class="project-link">
+                            <i class="bi bi-github me-1"></i>
+                            Source Code
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-top">
+                        <i class="bi bi-cart3"></i>
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>
+                            Full Stack E-Commerce Application
+                        </h3>
+
+                        <p>
+                            A full-stack e-commerce application designed
+                            with product management, user functionality,
+                            shopping cart, order processing and database
+                            integration using Java and Spring Boot.
+                        </p>
+
+                        <div class="tech-stack">
+
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">Spring Boot</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Bootstrap</span>
+
+                        </div>
+
+                        <a href="#" class="project-link">
+                            <i class="bi bi-github me-1"></i>
+                            Source Code
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="text-center mt-5">
+
+            <a href="#" class="btn-main">
+
+                <i class="bi bi-github me-2"></i>
+
+                View More Projects
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience" class="section-light">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Experience & Training
+        </h2>
+
+        <div class="title-line"></div>
+
+        <p class="section-subtitle">
+            My learning journey and practical development experience.
+        </p>
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9">
+
+
+                <!-- TRAINING -->
+
+                <div class="experience-card">
+
+                    <div class="experience-date">
+                        Summer Training
+                    </div>
+
+                    <h3>
+                        Java Full Stack Development Training
+                    </h3>
+
+                    <div class="experience-company">
+                        Practical Software Development Training
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Learned core Java programming and object-oriented
+                            programming concepts.
+                        </li>
+
+                        <li>
+                            Worked with Spring Boot and Spring MVC for
+                            web application development.
+                        </li>
+
+                        <li>
+                            Practiced MySQL database design, SQL queries
+                            and JDBC/JdbcTemplate connectivity.
+                        </li>
+
+                        <li>
+                            Developed responsive interfaces using HTML,
+                            CSS, JavaScript and Bootstrap.
+                        </li>
+
+                        <li>
+                            Built practical projects to understand
+                            real-world application development.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- PROJECT EXPERIENCE -->
+
+                <div class="experience-card">
+
+                    <div class="experience-date">
+                        Project Development
+                    </div>
+
+                    <h3>
+                        Java Web Application Development
+                    </h3>
+
+                    <div class="experience-company">
+                        Personal & Training Projects
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Developed a Leave Management System with
+                            employee and administrator functionality.
+                        </li>
+
+                        <li>
+                            Developed Education Hub with student,
+                            assignment, enquiry and administrative features.
+                        </li>
+
+                        <li>
+                            Worked with CRUD operations, sessions,
+                            form validation and database integration.
+                        </li>
+
+                        <li>
+                            Designed responsive and professional user
+                            interfaces using Bootstrap.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- CURRENT GOAL -->
+
+                <div class="experience-card">
+
+                    <div class="experience-date">
+                        Current Goal
+                    </div>
+
+                    <h3>
+                        Java Full Stack Developer
+                    </h3>
+
+                    <div class="experience-company">
+                        Open to Entry-Level Opportunities
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Looking for an opportunity to begin my career
+                            as a Java / Full Stack Developer.
+                        </li>
+
+                        <li>
+                            Interested in backend development, web
+                            applications and REST API development.
+                        </li>
+
+                        <li>
+                            Continuously improving Java, Spring Boot,
+                            SQL and problem-solving skills.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Get In Touch
+        </h2>
+
+        <div class="title-line"></div>
+
+        <p class="section-subtitle">
+            I'm open to entry-level Java and Full Stack Developer
+            opportunities and professional collaborations.
+        </p>
+
+
+        <div class="row g-4 justify-content-center">
+
+
+            <!-- EMAIL -->
+
+            <div class="col-md-4">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+
+                    <h4>
+                        Email
+                    </h4>
+
+                    <a href="mailto:abhishek9264ok@gmail.com">
+                        abhishek9264ok@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="col-md-4">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+
+                    <h4>
+                        Phone
+                    </h4>
+
+                    <p>
+                        <a href="tel:+919264968019">+91 9264968019</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="col-md-4">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+
+                    <h4>
+                        Location
+                    </h4>
+
+                    <p>
+                        <a href="https://maps.app.goo.gl/ymx9v6T1cua59rTZA" target="_blank">Uttar Pradesh, India</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="social-links">
+
+            <a href="https://github.com/Abhishek9264ok"
+               class="social-link"
+               title="GitHub">
+
+                <i class="bi bi-github"></i>
+
+            </a>
+
+
+            <a href="https://www.linkedin.com/in/abhishek-kumar-632505278/"
+               class="social-link"
+               title="LinkedIn">
+
+                <i class="bi bi-linkedin"></i>
+
+            </a>
+
+
+            <a href="mailto:abhishek9264ok@gmail.com"
+               class="social-link"
+               title="Email">
+
+                <i class="bi bi-envelope"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+
+            © 2026
+            <strong>Abhishek Kumar</strong>.
+
+            All Rights Reserved.
+
+            <br>
+
+            Java Full Stack Developer | Built with
+            Java, Spring Boot & Web Technologies.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= BOOTSTRAP JS ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- ================= CUSTOM JAVASCRIPT ================= -->
+
+<script>
+
+    /* Close mobile navbar after clicking a link */
+
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+
+        link.addEventListener('click', function() {
+
+            const navbar =
+                document.getElementById('portfolioNavbar');
+
+            if (navbar.classList.contains('show')) {
+
+                const collapse =
+                    bootstrap.Collapse.getInstance(navbar) ||
+                    new bootstrap.Collapse(navbar);
+
+                collapse.hide();
+
+            }
+
+        });
+
+    });
+
+
+    /* Active navigation */
+
+    const sections =
+        document.querySelectorAll('section');
+
+    const navLinks =
+        document.querySelectorAll('.nav-link');
+
+
+    window.addEventListener('scroll', function() {
+
+        let current = '';
+
+        sections.forEach(function(section) {
+
+            const sectionTop =
+                section.offsetTop - 120;
+
+            if (window.scrollY >= sectionTop) {
+
+                current =
+                    section.getAttribute('id');
+
+            }
+
+        });
+
+
+        navLinks.forEach(function(link) {
+
+            link.classList.remove('active');
+
+            if (
+                link.getAttribute('href') ===
+                '#' + current
+            ) {
+
+                link.classList.add('active');
+
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+
+</html>
